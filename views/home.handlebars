@@ -1,0 +1,138 @@
+<div class="container">
+	<h1 class="text-center">{{title}}</h1>
+	
+	{{!-- Promises Test --}}
+	<div class="row text-white">
+		<div class="col-sm bg-dark boxSize overflowScroll">
+			<div class="text-center">
+				<h2>MongoDB (GET)</h2>
+			</div>
+			
+			<div class="text-center ">
+
+				<table class="table">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col"># id</th>
+				      <th scope="col">Goal</th>
+				      <th scope="col">Time</th>
+				      <th scope="col">Date</th>
+				      <th scope="col">Edit</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+
+				  	{{!-- 
+					  	1. Click edit button.
+					  		a. Ajax call, will change by adding and removing classes in the following.
+					  	2. That specific row gets selected (make it so visually)
+					  		a. Remove delete and edit icons; replace with save/update and cancel buttons
+					  		b. Give current value as placeholder or value in textbox input
+					  	3. Hitting save will trigger ajax, then post method, then ajax depending on message, the input will return to their original values or the new value. 
+		  			--}}
+
+				  	{{#if items}}
+						{{#each items}}
+							
+							<tr id="row-{{this.id}}">
+							    <td>
+							    	<div id="edit-button-area-{{this.id}}">
+							    		<i class="material-icons edit-hover" id="edit-entry-{{this.id}}">edit</i>
+							    	</div>{{this.id}}
+							    </td>
+
+							    <td>
+							    	<div id="goal-entry-{{this.id}}">{{this.goal}}</div>
+							    	<div id="goal-box-value-{{this.id}}" style="display: none">
+							    		<input type="text" class="form-control" id="goal-textbox-input-{{this.id}}" value="{{this.goal}}">
+							    	</div>
+							    </td>
+
+							    <td>
+							    	<div id="timeCoded-entry-{{this.id}}">{{this.timeCoded}}</div>
+							    	<div id="timeCoded-box-value-{{this.id}}" style="display: none">
+							    		<input type="number" class="form-control" id="timeCoded-textbox-input-{{this.id}}" value="{{this.timeCoded}}">
+							    	</div>
+
+							    </td>
+							    <td><div id="date-entry-{{this.id}}">{{this.date}}</div></td>
+
+								<td>
+									<div id="delete-area-{{this.id}}"><button class="btn btn-danger" id="delete-entry-{{this.id}}">Delete</button></div>
+									
+									<div id="save-button-{{this.id}}" style="display: none">
+										<button class="btn btn-success" id="save-entry-{{this.id}}">Save</button>
+									</div>
+								</td>
+						  	</tr>
+						{{/each}}
+					{{else}}
+						<tr>
+							<td>Nothing here!</td>
+						</tr>
+					{{/if}}
+				    
+				  </tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="row text-white">
+		<div class="col-sm bg-primary boxSize">
+			<div class="text-center">
+				<h2>React.js Demonstration (not working yet)</h2>
+				<ul>
+					<li>I plan on having interactive content here (checklist) that will update on click.</li>
+				</ul>
+			</div>
+		</div>
+		
+		{{!-- POST Method --}}
+		<div class="col-sm forestGreen boxSize overflowScroll">
+			<form id="post-test-form">
+			  <div class="form-group">
+			    <label for="goal_input">Goal</label>
+			    <input type="text" class="form-control" name="goal_input" placeholder="Javascript...">
+			  </div>
+			  <div class="form-group">
+			    <label for="time_coded_input">Time Coded (min)</label>
+			    <input type="number" class="form-control" name="time_coded_input" placeholder="30, 60, 120...">
+			  </div>
+			  {{!-- <input type="submit" value="SUBMIT" class="btn btn-primary"></input> --}}
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			<h4>req.params is grabbing: {{grab.grab}}</h4>
+			<h4>req.body is grabbing: {{body.goal_input}}</h4>
+		</div>
+
+
+
+	</div>
+
+	<div class="row text-white">
+		<div class="col-sm bg-dark boxSize">
+			<div class="text-center">
+				<h2>AJAX Demonstration (looking to compare and contrast React.js)</h2>
+			</div>
+
+		</div>
+
+		<div class="col-sm orange boxSize">
+			<div class="text-center">
+				<h2>MongoDB Demonstration (not working yet)</h2>
+				<ul>
+					<li>I plan on outputting data here of the current table, and then modifying them with these buttons.</li>
+				</ul>
+			</div>
+			<div class="text-center">
+				<button type="button" class="btn btn-warning" id="getRequestBtn">GET</button>
+				<button type="button" class="btn btn-info">POST</button>
+				<button type="button" class="btn btn-danger">DELETE</button>
+				<button type="button" class="btn btn-success">PUT</button>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,18 @@
+{
+  "name": "njs_b_1-routesexpress",
+  "version": "1.0.0",
+  "description": "Routes, Express, Basics",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Quynh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.17"
+  }
+}

@@ -1,0 +1,33 @@
+.forestGreen {
+    background-color: #0e8448 !important;
+}
+
+.orange {
+    background-color: #FF8C00 !important;
+}
+
+nav a {
+    color: white !important;
+}
+
+.boxSize {
+    /*min-height: 15rem;
+    max-height: 20rem;*/
+    /*height: 100%;*/
+
+    height: 20rem;
+    margin: 1em;
+}
+
+.overflowScroll {
+	overflow: scroll !important;
+}
+
+.edit-hover:hover {
+	color:yellow;
+	cursor: pointer;
+}
+
+.active-row {
+	background-color: grey;
+}
